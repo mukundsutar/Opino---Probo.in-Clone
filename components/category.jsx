@@ -32,11 +32,8 @@ export default function Category() {
         className="my-4 mt-2 h-auto space-x-2 p-2 px-2"
       >
         {sports.map((item, index) => (
-          <Surface elevation={1} className="mb-1 rounded-xl">
-            <View
-              key={index}
-              className="flex-col items-center justify-center space-y-1 rounded-xl bg-white p-3 px-5"
-            >
+          <Surface key={index} elevation={1} className="mb-1 rounded-xl">
+            <View className="flex-col items-center justify-center space-y-1 rounded-xl bg-white p-3 px-5">
               <Image source={item.image} className="h-9 w-9" tintColor="#000" />
 
               <Text>{item.name}</Text>

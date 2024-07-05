@@ -16,6 +16,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: "",
+          tabBarLabel: () => <Text>Home</Text>,
           statusBarStyle: "dark",
           tabBarIcon: () => (
             <MaterialIcons name="home-filled" size={24} color="black" />
@@ -24,7 +25,7 @@ export default function TabLayout() {
           headerLeft: () => (
             <Image
               source={require("../../assets/person.png")}
-              className="ml-2 h-9 w-9"
+              className="ml-3 h-9 w-9"
               resizeMode="contain"
               tintColor="#000"
             />
@@ -32,7 +33,7 @@ export default function TabLayout() {
           headerRight: () => (
             <Surface
               mode="flat"
-              className="mr-2 rounded-full border border-black/10 bg-white"
+              className="mr-3 rounded-full border border-black/10 bg-white"
             >
               <Image
                 source={require("../../assets/bell.png")}

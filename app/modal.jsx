@@ -17,19 +17,19 @@ export default function Modal() {
 
   return (
     <BlurView intensity={100} className="bg-black/50">
-      <View className="mt-[85%] w-full flex-col items-center rounded-3xl bg-slate-100">
+      <View className="mt-[85%] w-full flex-col items-center rounded-3xl bg-white">
         <Surface
           elevation={5}
-          className="w-full flex-col items-center rounded-3xl bg-slate-100 p-7 py-10"
+          className="w-full flex-col items-center rounded-3xl bg-white p-7 py-10"
         >
-          <View className="mb-2 w-full flex-row justify-between">
+          <View className="mb-2 w-full flex-row items-center justify-between">
             <Text className="text-base font-bold">
               Kolkata to win the match v/s Mumbai?
             </Text>
             <Image source={require("../assets/ipl.png")} className="h-9 w-12" />
           </View>
 
-          <Surface elevation={2} className="m-4 w-full rounded-full">
+          <Surface elevation={1} className="m-4 w-full rounded-full bg-white">
             <View className="h-14 flex-row items-center justify-center">
               {/* is true */}
               <Button
@@ -40,7 +40,7 @@ export default function Modal() {
                   setToggleButton(!toggleButton);
                 }}
               >
-                <Text className="text-base">Yes ₹ 5.3</Text>
+                <Text className="text-base font-bold">Yes ₹ 5.3</Text>
               </Button>
 
               {/* if false */}
@@ -52,7 +52,7 @@ export default function Modal() {
                   setToggleButton(!toggleButton);
                 }}
               >
-                <Text className="text-base">No ₹ 4.7</Text>
+                <Text className="text-base font-bold">No ₹ 4.7</Text>
               </Button>
             </View>
           </Surface>
@@ -72,6 +72,8 @@ export default function Modal() {
                 mode="contained-tonal"
                 icon="minus"
                 className="rounded-xl"
+                iconColor="#000"
+                containerColor="#d0d5dd"
               />
 
               <Slider
@@ -87,6 +89,8 @@ export default function Modal() {
                 mode="contained-tonal"
                 icon="plus"
                 className="rounded-xl"
+                iconColor="#000"
+                containerColor="#d0d5dd"
               />
             </View>
 
