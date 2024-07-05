@@ -4,7 +4,7 @@ import { Image } from "react-native";
 export default function Layout() {
   return (
     <Stack>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="index"
         options={{
           title: "",
@@ -24,6 +24,14 @@ export default function Layout() {
           ),
           statusBarStyle: "dark",
         }}
+      /> */}
+      <Stack.Screen
+        name="(tabs)"
+        options={{
+          headerShown: false,
+          statusBarHidden: false,
+          statusBarStyle: "dark",
+        }}
       />
       <Stack.Screen
         name="modal"
@@ -31,6 +39,8 @@ export default function Layout() {
           headerShown: false,
           presentation: "transparentModal",
           animation: "fade_from_bottom",
+          statusBarHidden: false,
+          statusBarStyle: "dark",
         }}
       />
     </Stack>

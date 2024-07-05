@@ -1,10 +1,16 @@
 import { View, Image } from "react-native";
 import { Text } from "react-native";
 import { useState } from "react";
-import { Button, Divider, IconButton, Surface } from "react-native-paper";
+import {
+  Button,
+  Divider,
+  IconButton,
+  Surface,
+  TouchableRipple,
+} from "react-native-paper";
 import Slider from "@react-native-community/slider";
 import SwipeButton from "rn-swipe-button";
-import arrow from "../assets/double_arrow.png";
+import arrow from "../../assets/double_arrow.png";
 import { BlurView } from "expo-blur";
 
 export default function Modal() {
@@ -16,7 +22,7 @@ export default function Modal() {
   const updateSwipeStatusMessage = (message) => setSwipeStatusMessage(message);
 
   return (
-    <BlurView intensity={100} className="bg-black/50">
+    <BlurView intensity={100} tint="#afb">
       <View className="mt-[85%] w-full flex-col items-center rounded-3xl bg-slate-100">
         <Surface
           elevation={5}
@@ -26,7 +32,7 @@ export default function Modal() {
             <Text className="text-base font-bold">
               Kolkata to win the match v/s Mumbai?
             </Text>
-            <Image source={require("../assets/ipl.png")} className="h-9 w-12" />
+            <Image source={require("../../assets/ipl.png")} className="h-9 w-12" />
           </View>
 
           <Surface elevation={2} className="m-4 w-full rounded-full">

@@ -1,17 +1,26 @@
 import React from "react";
 import { Image, ScrollView, Text, View } from "react-native";
+import Cricket from "../assets/cricket.png";
+import Crypto from "../assets/crypto.png";
+import Football from "../assets/football.png";
+import Stocks from "../assets/stocks.png";
+import Economy from "../assets/economy.png";
+import News from "../assets/news.png";
+import Basketball from "../assets/basketball.png";
+import YouTube from "../assets/youtube.png";
+import Chess from "../assets/chess.png";
 
 export default function Category() {
   const sports = [
-    "Cricket",
-    "Crypto",
-    "Football",
-    "Stocks",
-    "Economy",
-    "News",
-    "Basketball",
-    "YouTube",
-    "Chess",
+    { name: "Cricket", image: Cricket },
+    { name: "Crypto", image: Crypto },
+    { name: "Football", image: Football },
+    { name: "Stocks", image: Stocks },
+    { name: "Economy", image: Economy },
+    { name: "News", image: News },
+    { name: "Basketball", image: Basketball },
+    { name: "YouTube", image: YouTube },
+    { name: "Chess", image: Chess },
   ];
 
   return (
@@ -26,12 +35,9 @@ export default function Category() {
             key={index}
             className="flex-col items-center justify-center space-y-1 rounded-lg bg-white p-3 px-5"
           >
-            <Image
-              source={require("../assets/cricket.png")}
-              className="h-9 w-9"
-            />
+            <Image source={item.image} className="h-9 w-9" tintColor="#000" />
 
-            <Text>{item}</Text>
+            <Text>{item.name}</Text>
           </View>
         ))}
       </ScrollView>
