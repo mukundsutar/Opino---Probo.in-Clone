@@ -1,23 +1,27 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import Notification from "../../assets/bell.png";
 import { Tabs } from "expo-router";
-import { Image } from "react-native";
-import { Badge, Surface } from "react-native-paper";
-import { Userpic } from "react-native-userpic";
+import { Image, Text } from "react-native";
+import { Surface } from "react-native-paper";
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: "blue" }}>
+    <Tabs
+      screenOptions={{
+        tabBarStyle: { paddingBottom: 12, paddingTop: 12, height: 70 },
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: "",
+          title: "Home",
+          tabBarLabel: () => <Text>Home</Text>,
           statusBarStyle: "dark",
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: () => (
             <MaterialIcons name="home-filled" size={24} color="black" />
           ),
+          tabBarActiveTintColor: "#000",
           headerLeft: () => (
             <Image
               source={require("../../assets/person.png")}
@@ -44,8 +48,9 @@ export default function TabLayout() {
       <Tabs.Screen
         name="search"
         options={{
-          title: "Settings",
-          tabBarIcon: ({ color }) => (
+          title: "Search",
+          tabBarLabel: () => <Text>Search</Text>,
+          tabBarIcon: () => (
             <MaterialIcons name="search" size={24} color="black" />
           ),
         }}
@@ -53,8 +58,9 @@ export default function TabLayout() {
       <Tabs.Screen
         name="sports"
         options={{
-          title: "Settings",
-          tabBarIcon: ({ color }) => (
+          title: "Sports",
+          tabBarLabel: () => <Text>Sports</Text>,
+          tabBarIcon: () => (
             <MaterialCommunityIcons name="trophy" size={24} color="black" />
           ),
         }}
@@ -62,8 +68,9 @@ export default function TabLayout() {
       <Tabs.Screen
         name="portfolio"
         options={{
-          title: "Settings",
-          tabBarIcon: ({ color }) => (
+          title: "Portfolio",
+          tabBarLabel: () => <Text>Portfolio</Text>,
+          tabBarIcon: () => (
             <FontAwesome name="briefcase" size={24} color="black" />
           ),
         }}
@@ -71,8 +78,9 @@ export default function TabLayout() {
       <Tabs.Screen
         name="wallet"
         options={{
-          title: "Settings",
-          tabBarIcon: ({ color }) => (
+          title: "Wallet",
+          tabBarLabel: () => <Text>Wallet</Text>,
+          tabBarIcon: () => (
             <MaterialCommunityIcons
               name="wallet-outline"
               size={24}

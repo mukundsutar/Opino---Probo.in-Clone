@@ -9,6 +9,7 @@ import News from "../assets/news.png";
 import Basketball from "../assets/basketball.png";
 import YouTube from "../assets/youtube.png";
 import Chess from "../assets/chess.png";
+import { Surface } from "react-native-paper";
 
 export default function Category() {
   const sports = [
@@ -31,14 +32,16 @@ export default function Category() {
         className="my-4 mt-2 h-auto space-x-2 p-2 px-2"
       >
         {sports.map((item, index) => (
-          <View
-            key={index}
-            className="flex-col items-center justify-center space-y-1 rounded-lg bg-white p-3 px-5"
-          >
-            <Image source={item.image} className="h-9 w-9" tintColor="#000" />
+          <Surface elevation={1} className="mb-1 rounded-xl">
+            <View
+              key={index}
+              className="flex-col items-center justify-center space-y-1 rounded-xl bg-white p-3 px-5"
+            >
+              <Image source={item.image} className="h-9 w-9" tintColor="#000" />
 
-            <Text>{item.name}</Text>
-          </View>
+              <Text>{item.name}</Text>
+            </View>
+          </Surface>
         ))}
       </ScrollView>
     </>
